@@ -1,0 +1,15 @@
+rootProject.name = 'Evol01'
+
+
+def use = { String name, String path ->
+    include(name)
+    project(name).projectDir = new File(settingsDir, path)
+}
+
+if(new File(settingsDir, '../WLib-engine-game-swing').exists()){
+    use(':engine-game-swing', '../WLib-engine-game-swing')
+}
+
+if(new File(settingsDir, '../WLib-engine-game-swing').exists()){
+    use(':engine-ai', '../WLib-engine-ai')
+}

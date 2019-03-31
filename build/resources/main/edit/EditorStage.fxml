@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="266.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wdeath.game.evol01.editor.edit.EditorStageControll">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <Label text="Размер окна(высота Х ширина)" />
+      <TextField fx:id="sizeWindow" />
+      <Separator prefWidth="200.0" />
+      <Label text="Размер ячейки(высотаХширина)" />
+      <TextField fx:id="sizeCell" />
+      <Separator prefWidth="200.0" />
+      <Label text="Настройки рендера" />
+      <VBox prefHeight="142.0" prefWidth="256.0" spacing="5.0" style="-fx-border-color: #555;">
+         <children>
+            <CheckBox fx:id="synDraw" mnemonicParsing="false" text="Синхранизировать отрисовку" />
+            <CheckBox fx:id="isSleepThreadUpdate" mnemonicParsing="false" text="Задержка потока обновления" />
+            <CheckBox fx:id="drawDirBot" mnemonicParsing="false" text="Отрисовка направления ботов" />
+            <CheckBox fx:id="drawWorld" mnemonicParsing="false" text="Отображать весь мир" />
+            <CheckBox fx:id="drawInfoWorld" mnemonicParsing="false" text="Отображать информацию мира" />
+            <CheckBox fx:id="opti" mnemonicParsing="false" text="Оптимизация вычеслений" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Separator prefWidth="200.0" />
+      <Label text="Режим отобржения цвета ботов" />
+      <VBox prefHeight="101.0" prefWidth="256.0" spacing="5.0" style="-fx-border-color: #555;">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <RadioButton fx:id="tdcNorm" mnemonicParsing="false" text="Сканирование генома">
+               <toggleGroup>
+                  <ToggleGroup fx:id="typeShowBot" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="tdcHealth" mnemonicParsing="false" text="Жизни" toggleGroup="$typeShowBot" />
+            <RadioButton fx:id="tdcFood" mnemonicParsing="false" text="Еда" toggleGroup="$typeShowBot" />
+            <RadioButton fx:id="tdcBot" mnemonicParsing="false" text="Окрас по действию" toggleGroup="$typeShowBot" />
+         </children>
+      </VBox>
+      <Separator prefWidth="200.0" />
+      <Label text="Ключ рандома" />
+      <TextField fx:id="seedRandom" />
+      <Separator prefWidth="200.0" />
+      <Label text="Задержка потока рендера" />
+      <TextField fx:id="sleepThreadUpdate" />
+      <Separator prefWidth="200.0" />
+      <Button fx:id="run" mnemonicParsing="false" onMouseClicked="#start" prefHeight="25.0" prefWidth="313.0" text="Запустить" />
+      <Button mnemonicParsing="false" onMouseClicked="#updateConfig" prefHeight="25.0" prefWidth="283.0" text="Применить параметры" />
+      <Button mnemonicParsing="false" onMouseClicked="#pauseAndRun" prefHeight="25.0" prefWidth="312.0" text="Пауза/Продолжить" />
+   </children>
+</VBox>
